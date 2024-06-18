@@ -28,6 +28,7 @@ ts = adafruit_touchscreen.Touchscreen(board.TOUCH_XL, board.TOUCH_XR,
                                       size=(WIDTH, HEIGHT))
 
 odg = gifio.OnDiskGif('/sample.gif')
+gc.collect() #helps prevent memory errors 
 
 start = time.monotonic()
 next_delay = odg.next_frame()  # Load the first frame
